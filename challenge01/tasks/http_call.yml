@@ -1,0 +1,10 @@
+# make an HTTP request
+- name: make uri call
+  ansible.windows.win_uri:
+    url: https://random-data-api.com/api/v2/appliances
+  register: results
+
+- name: place data into file on desktop
+  ansible.windows.win_copy:
+    content: "{{ results }}"
+    dest: "C:\\Users\\{{ ansible_user }}\\Desktop\\uri_lookup.txt"

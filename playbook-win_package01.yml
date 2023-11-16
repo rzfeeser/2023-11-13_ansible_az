@@ -1,0 +1,10 @@
+---
+- name: Installing Apache MSI
+  hosts: windows
+  connection: winrm
+  gather_facts: true
+  
+  tasks:
+    - name: install MSI
+      ansible.windows.win_package:
+        path: https://archive.apache.org/dist/httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi

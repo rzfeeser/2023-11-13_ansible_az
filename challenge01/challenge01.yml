@@ -1,0 +1,28 @@
+---
+- name: CHALLENGE 01
+  hosts: windows
+  gather_facts: true    # required for ansible_date_time
+  #connection: winrm    # defined in inventory
+
+  vars:
+    zip_url: https://www.7-zip.org/a/7z2301-x64.exe   # default URL for 7zip download
+    updating: false                                   # boolean to control 7zip initial install or update with new version
+
+  tasks:
+
+  ## 7-ZIP
+  - name: 7zip
+    ansible.builtin.import_tasks:
+      file: tasks/appinstall.yml
+
+
+  ## datetime
+  - name: datetime
+    ansible.builtin.import_tasks:
+      file: tasks/datetime_move.yml
+
+
+  ## http
+  - name: http
+    ansible.builtin.import_tasks:
+      file: tasks/http_call.yml

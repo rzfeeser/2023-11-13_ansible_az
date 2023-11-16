@@ -1,0 +1,11 @@
+---
+- name: Learning to Use Ansible for Windows automation
+  hosts: localhost
+  #connection: winrm   # we already mapped this in our inventory
+  gather_facts: yes    # this is ansible.builtin.setup
+
+  tasks:
+  
+    - name: Display just IPv4
+      ansible.builtin.debug:
+        var: ansible_facts.mounts | map(attribute='block_available')

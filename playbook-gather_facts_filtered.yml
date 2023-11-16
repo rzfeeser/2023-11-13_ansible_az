@@ -1,0 +1,17 @@
+---
+- name: Learning to Use Ansible for Windows automation
+  hosts: windows
+  #connection: winrm   # we already mapped this in our inventory
+  gather_facts: no    # this is ansible.builtin.setup
+
+  tasks:
+  
+  - name: Filter and return only selected facts
+    ansible.builtin.setup:
+      filter:
+        - 'interfaces'
+        - 'ansible_interfaces'
+        - '*interfaces*'
+
+  - ansible.builtin.debug:
+      var: ansible_facts

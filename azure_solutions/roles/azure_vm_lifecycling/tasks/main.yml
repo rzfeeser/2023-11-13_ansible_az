@@ -1,0 +1,19 @@
+---
+# tasks file for roles/azure_vm_lifecycling.yml
+- name: deploy a VM with error handling
+  when: build_state == "present"
+  block:
+  - name: deploy a vm
+    ansible.builtin.import_tasks:
+      file: create_azurevm.yml
+
+  rescue:
+  - name: remove a vm
+    ansible.builtin.import_tasks:
+      file: remove_azurevm.yml
+
+        
+- name: remove a VM cleanup if after yourself
+  ansible.builtin.import_tasks:
+    file: remove_azurevm.yml
+  when: build_state == "absent"

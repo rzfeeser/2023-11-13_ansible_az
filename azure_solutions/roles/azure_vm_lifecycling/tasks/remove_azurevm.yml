@@ -1,0 +1,59 @@
+- name: remove virtual machine
+  azure.azcollection.azure_rm_virtualmachine:
+    resource_group: "{{ rg_name }}"
+    name: "{{ vm_name }}"
+    state: absent
+    vm_size: "{{ vm_size }}"   # for a list see --> https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2
+    managed_disk_type: Standard_LRS
+    admin_username: "{{ admin_username }}"
+    admin_password: "{{ admin_password }}"
+    network_interfaces: testnic001
+    image: "{{ image }}"
+
+- name: remove NIC
+  azure.azcollection.azure_rm_networkinterface:
+    resource_group: "{{ rg_name }}"
+    name: testnic001
+    state: absent
+    virtual_network: "{{ vnet_name }}"
+    subnet: "{{ subnet_name }}"
+    public_ip_name: "{{ public_ip_name }}"
+    security_group: secgroup001
+
+
+- name: remove security group that allows SSH
+  azure.azcollection.azure_rm_securitygroup:
+    resource_group: "{{ rg_name }}"
+    name: secgroup001
+    state: absent
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 101
+        direction: Inbound
+
+- name: remove public ip
+  azure.azcollection.azure_rm_publicipaddress:
+    resource_group: "{{ rg_name }}"
+    allocation_method: Static
+    name: "{{ public_ip_name }}"
+    state: absent
+
+
+- name: remove subnet
+  azure.azcollection.azure_rm_subnet:
+    resource_group: "{{ rg_name }}"
+    name: "{{ subnet_name }}"
+    address_prefix: "{{ address_prefix }}"
+    virtual_network: "{{ vnet_name }}"
+    state: absent
+
+
+- name: remove virtual network
+  azure.azcollection.azure_rm_virtualnetwork:
+    resource_group: "{{ rg_name }}"
+    name: "{{ vnet_name }}"
+    address_prefixes: "{{ address_prefixes }}"
+    state: absent

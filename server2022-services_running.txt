@@ -1,0 +1,208 @@
+AllJoyn Router Service
+Application Layer Gateway Service
+Application Identity
+Application Information
+Application Management
+App Readiness
+Microsoft App-V Client
+AppX Deployment Service (AppXSVC)
+Windows Audio Endpoint Builder
+Windows Audio
+ActiveX Installer (AxInstSV)
+Base Filtering Engine
+Background Intelligent Transfer Service
+Background Tasks Infrastructure Service
+Bluetooth Support Service
+Capability Access Manager Service
+CaptureService_1c3015e
+Clipboard User Service_1c3015e
+Connected Devices Platform Service
+Connected Devices Platform User Service_1c3015e
+Certificate Propagation
+Client License Service (ClipSVC)
+COM+ System Application
+ConsentUX User Service_1c3015e
+CoreMessaging
+CredentialEnrollmentManagerUserSvc_1c3015e
+Cryptographic Services
+Offline Files
+DCOM Server Process Launcher
+dcsvc
+Optimize drives
+DeviceAssociationBroker_1c3015e
+Device Association Service
+Device Install Service
+DevicePicker_1c3015e
+DevicesFlow_1c3015e
+DevQuery Background Discovery Broker
+DHCP Client
+Microsoft (R) Diagnostics Hub Standard Collector Service
+Connected User Experiences and Telemetry
+Display Policy Service
+Device Management Enrollment Service
+Device Management Wireless Application Protocol (WAP) Push message Routing Service
+DNS Client
+Delivery Optimization
+Wired AutoConfig
+Diagnostic Policy Service
+Device Setup Manager
+Data Sharing Service
+Extensible Authentication Protocol
+Microsoft Edge Update Service (edgeupdate)
+Microsoft Edge Update Service (edgeupdatem)
+Encrypting File System (EFS)
+Embedded Mode
+Enterprise App Management Service
+Windows Event Log
+COM+ Event System
+Function Discovery Provider Host
+Function Discovery Resource Publication
+Windows Font Cache Service
+Windows Camera Frame Server
+Windows Camera Frame Server Monitor
+Group Policy Client
+GraphicsPerfSvc
+Human Interface Device Service
+HV Host Service
+IKE and AuthIP IPsec Keying Modules
+Microsoft Store Install Service
+IP Helper
+CNG Key Isolation
+KDC Proxy Server service (KPS)
+KtmRm for Distributed Transaction Coordinator
+Server
+Workstation
+Geolocation Service
+Windows License Manager Service
+Link-Layer Topology Discovery Mapper
+TCP/IP NetBIOS Helper
+Local Session Manager
+Downloaded Maps Manager
+McpManagementService
+Microsoft Edge Elevation Service (MicrosoftEdgeElevationService)
+Windows Defender Firewall
+Distributed Transaction Coordinator
+Microsoft iSCSI Initiator Service
+Windows Installer
+Network Connectivity Assistant
+Network Connection Broker
+Netlogon
+Network Connections
+Network List Service
+Network Setup Service
+Net.Tcp Port Sharing Service
+Microsoft Passport Container
+Microsoft Passport
+Network Location Awareness
+Network Store Interface Service
+Program Compatibility Assistant Service
+Performance Counter DLL Host
+Contact Data_1c3015e
+Performance Logs & Alerts
+Plug and Play
+IPsec Policy Agent
+Power
+Printer Extensions and Notifications
+PrintWorkflow_1c3015e
+User Profile Service
+Windows PushToInstall Service
+Quality Windows Audio Video Experience
+Remote Access Auto Connection Manager
+Remote Access Connection Manager
+Routing and Remote Access
+Remote Registry
+Radio Management Service
+RPC Endpoint Mapper
+Remote Procedure Call (RPC) Locator
+Remote Procedure Call (RPC)
+Resultant Set of Policy Provider
+Special Administration Console Helper
+Security Accounts Manager
+Smart Card
+Smart Card Device Enumeration Service
+Task Scheduler
+Smart Card Removal Policy
+Secondary Logon
+Windows Security Service
+Payments and NFC/SE Manager
+System Event Notification Service
+Windows Defender Advanced Threat Protection Service
+Sensor Data Service
+Sensor Service
+Sensor Monitoring Service
+Remote Desktop Configuration
+System Guard Runtime Monitor Broker
+Internet Connection Sharing (ICS)
+Shell Hardware Detection
+Shared PC Account Manager
+Microsoft Storage Spaces SMP
+SNMP Trap
+Print Spooler
+Software Protection
+SSDP Discovery
+OpenSSH Authentication Agent
+OpenSSH SSH Server
+Secure Socket Tunneling Protocol Service
+State Repository Service
+Windows Image Acquisition (WIA)
+Storage Service
+Spot Verifier
+Microsoft Software Shadow Copy Provider
+SysMain
+System Events Broker
+Touch Keyboard and Handwriting Panel Service
+Telephony
+Remote Desktop Services
+Themes
+Storage Tiers Management
+Time Broker
+Web Account Manager
+Distributed Link Tracking Client
+Windows Modules Installer
+TightVNC Server
+Auto Time Zone Updater
+User Access Logging Service
+Udk User Service_1c3015e
+User Experience Virtualization Service
+Remote Desktop Services UserMode Port Redirector
+User Data Storage_1c3015e
+UPnP Device Host
+User Data Access_1c3015e
+User Manager
+Update Orchestrator Service
+Credential Manager
+Virtual Disk
+Hyper-V Guest Service Interface
+Hyper-V Heartbeat Service
+Hyper-V Data Exchange Service
+Hyper-V Guest Shutdown Service
+Hyper-V Time Synchronization Service
+Hyper-V PowerShell Direct Service
+Hyper-V Volume Shadow Copy Requestor
+Volume Shadow Copy
+Windows Time
+Windows Update Medic Service
+WalletService
+Warp JIT Service
+Windows Biometric Service
+Windows Connection Manager
+Diagnostic Service Host
+Diagnostic System Host
+Windows Event Collector
+Windows Encryption Provider Host Service
+Problem Reports Control Panel Support
+Windows Error Reporting Service
+Still Image Acquisition Events
+WinHTTP Web Proxy Auto-Discovery Service
+Windows Management Instrumentation
+Windows Remote Management (WS-Management)
+Windows Insider Service
+Microsoft Account Sign-in Assistant
+Windows Licensing Monitoring Service
+WMI Performance Adapter
+Windows Media Player Network Sharing Service
+Portable Device Enumerator Service
+Windows Push Notifications System Service
+Windows Push Notifications User Service_1c3015e
+Windows Search
+Windows Update

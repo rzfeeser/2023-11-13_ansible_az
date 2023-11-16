@@ -1,0 +1,15 @@
+- name: test communication with Azure
+  hosts: localhost   # this should be in an inventory not just a call to localhost
+  gather_facts: no   # no info about azure, just the localhost
+  connection: local
+
+  tasks:
+    - name: create a resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: my_test_resource_group   # name of the resource group to be created
+        location: eastus               # region
+        state: present                 # present / absent
+        #subscription_id: "{{ subscription_id }}"   # servicenow would provide this via --extra-vars "subscription_id=<value provided by SN>"
+
+
+

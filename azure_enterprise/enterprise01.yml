@@ -1,0 +1,9 @@
+- name: Build the components for an Azure VM
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: deploy azure VM
+    ansible.builtin.import_tasks:
+      file: tasks/deploy_azure_vm.yml

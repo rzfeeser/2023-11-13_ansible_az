@@ -1,0 +1,25 @@
+---
+- name: Download resources to the LINUX CONTROLLER then PUSH to WINDOWS
+  hosts: windows       # important! inventory is STILL describing WINDOWS hosts
+  #connection: winrm   # we already mapped this in our inventory
+  gather_facts: false
+
+  vars:
+          nasa_apod: "https://api.nasa.gov/assets/img/general/apod.jpg"
+
+  tasks:
+
+   - name: Download the file locally
+     ansible.builtin.get_url:      # this is a LINUX ONLY task
+       url: "{{ nasa_apod }}"
+       dest: "~/nasa_apod.jpg"
+     delegate_to: localhost
+     run_once: true   # no matter how many windows hosts are in inventory
+                      # only run this task ONCE
+       
+   # this is running with winrm
+   - name: Push our file to our windows server
+     ansible.windows.win_copy:
+       src: "~/nasa_apod.jpg"   # on our LOCAL controller
+       dest: "C:\\Users\\{{ ansible_user }}\\Desktop\\nasa_apod_from_controller.jpg"
+

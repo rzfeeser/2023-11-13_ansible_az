@@ -1,0 +1,29 @@
+- name: test communication with Azure
+  hosts: localhost   # this should be in an inventory not just a call to localhost
+  gather_facts: no   # no info about azure, just the localhost
+  connection: local
+
+  tasks:
+    - name: create a resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: my_test_resource_group   # name of the resource group to be created
+        location: eastus               # region
+        state: present                 # present / absent
+
+    - name: get info about our created resource group
+      azure.azcollection.azure_rm_resourcegroup_info:
+        name: my_test_resource_group   # name of the resource group to be created
+      register: results
+
+    - name: display what we learned
+      ansible.builtin.debug:
+        var: results
+
+    - name: Press ENTER to continue
+      ansible.builtin.pause:
+
+    - name: remove resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: my_test_resource_group   # name of the resource group to be created
+        location: eastus               # region
+        state: absent                  # absent / present

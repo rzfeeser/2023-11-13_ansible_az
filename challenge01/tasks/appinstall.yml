@@ -1,0 +1,29 @@
+- name: ensure a download directory exists
+  ansible.windows.win_file:
+    path: "C:\\Users\\{{ ansible_user }}\\Desktop\\ansible_examples\\"
+    state: directory
+
+- name: download the 7zip installer
+  ansible.windows.win_get_url:
+    url: "{{ zip_url }}"      # path to the 7zip url
+    dest: "C:\\Users\\{{ ansible_user }}\\Desktop\\ansible_examples\\"
+
+# ansible.windows.win_package is NOT idempotent for 7zip without the "creates_path"
+# unfortunately, if we want to UPDATE 7zip, and it is already installed, the "creates_path" prevents a second install (i.e. the update)
+# our hack-around is to let the user pass a variable (updating) where if true, we always attempt to install 7zip
+- name: select if we are installing or performing a change operation
+  block:
+    - name: installing 7zip
+      ansible.windows.win_package:
+        path: "C:\\Users\\{{ ansible_user }}\\Desktop\\ansible_examples\\{{ zip_url.split('/')[-1] }}"
+        arguments: '/S'
+        creates_path: 'C:\Program Files\7-Zip\7z.exe'
+        state: present
+      when: ansible_os_family == 'Windows' and not updating|bool   # this is a windows ONLY app
+
+    - name: updating 7zip
+      ansible.windows.win_package:
+        path: "C:\\Users\\{{ ansible_user }}\\Desktop\\ansible_examples\\{{ zip_url.split('/')[-1] }}"
+        arguments: '/S'
+        state: present
+      when: ansible_os_family == 'Windows' and updating|bool

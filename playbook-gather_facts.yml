@@ -1,0 +1,61 @@
+---
+- name: Learning to Use Ansible for Windows automation
+  hosts: windows
+  #connection: winrm   # we already mapped this in our inventory
+  gather_facts: no    # this is ansible.builtin.setup
+
+  tasks:
+  
+    - name: Gather ALL facts
+      ansible.builtin.setup:
+      tags:
+        - never
+        - all_facts
+
+    - name: Gather ONLY NETWORK facts
+      ansible.builtin.setup:
+        gather_subset:
+          - '!all'
+          - '!min'
+          - 'network'
+      tags:
+        - never
+        - network_facts
+
+
+    - name: Gather ONLY HARDWARE facts
+      ansible.builtin.setup:
+        gather_subset:
+          - '!all'
+          - '!min'
+          - 'hardware'
+      tags:
+        - never
+        - hardware_facts
+
+
+    - name: show that my solution works
+      ansible.builtin.debug:
+        var: ansible_facts
+      tags:
+        - always
+
+          #
+          #    - name: What did gather_facts return?
+          #      ansible.builtin.debug:
+          #        var: ansible_facts.interfaces
+          #
+          #
+          #    - name: What did gather_facts return?
+          #      ansible.builtin.debug:
+          #        var: ansible_interfaces.ipv4.address
+          #
+          #
+          #    - name: What did gather_facts return?
+          #      ansible.builtin.debug:
+          #        var: ansible_facts.ip_addresses
+          #
+          #
+          #    - name: What did gather_facts return?
+          #      ansible.builtin.debug:
+          #        var: ansible_ip_addresses[-1]

@@ -1,0 +1,5 @@
+# place a file called `readme.txt` on the Desktop containing the current date and time
+- name: move file to student user desktop
+  ansible.windows.win_copy:
+    content: "{{ ansible_date_time }}"   # taken from ansible facts
+    dest: "C:\\Users\\{{ ansible_user }}\\Desktop\\readme.txt"

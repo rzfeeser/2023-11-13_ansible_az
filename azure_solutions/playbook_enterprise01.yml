@@ -1,0 +1,20 @@
+---
+- name: An empty playbook that deploys a vm
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - vars.yml # User Interface (faces service now)
+
+  tasks:
+
+    - name: deploy a vm
+      ansible.builtin.import_tasks:
+        file: tasks/create_azurevm.yml
+      when: build_state == "present"
+
+    - name: remove a vm
+      ansible.builtin.import_tasks:
+        file: tasks/remove_azurevm.yml
+      when: build_state == "absent"

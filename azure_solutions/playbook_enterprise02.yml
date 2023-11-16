@@ -1,0 +1,29 @@
+---
+- name: an empty playbook that deploys or remove a vm on azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - vars.yml # User Interface (faces service now)
+
+  tasks:
+
+    - name: deploy a VM with error handling
+      when: build_state == "present"
+      block:
+      - name: deploy a vm
+        ansible.builtin.import_tasks:
+          file: tasks/create_azurevm.yml
+      - fail:
+
+      rescue:
+      - name: remove a vm
+        ansible.builtin.import_tasks:
+          file: tasks/remove_azurevm.yml
+
+            
+    - name: remove a VM cleanup if after yourself
+      ansible.builtin.import_tasks:
+        file: tasks/remove_azurevm.yml
+      when: build_state == "absent"
