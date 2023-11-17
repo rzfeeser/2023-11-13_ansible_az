@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "69cc12b5-2574-4e3c-bc8d-d552f04a11b0", "counter": 1, "stdout": "\u001b[0;31mERROR! the playbook: windows_sercices01 could not be found\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "00882fac-7840-48b3-b1da-60ede56d74ff", "created": "2023-11-17T19:02:22.763764"}

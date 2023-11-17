@@ -1,0 +1,230 @@
+[1;35m[WARNING]: Collection ansible.windows does not support Ansible version 2.11.12[0m
+
+PLAY [Looping across Windows Services] *****************************************
+
+TASK [Grab a list of windows services] *****************************************
+[0;32mok: [server2022][0m
+
+TASK [What results did we get?] ************************************************
+[0;32mok: [server2022] => {[0m
+[0;32m    "results.get('services') | map(attribute=\"display_name\")": [[0m
+[0;32m        "AllJoyn Router Service",[0m
+[0;32m        "Application Layer Gateway Service",[0m
+[0;32m        "Application Identity",[0m
+[0;32m        "Application Information",[0m
+[0;32m        "Application Management",[0m
+[0;32m        "App Readiness",[0m
+[0;32m        "Microsoft App-V Client",[0m
+[0;32m        "AppX Deployment Service (AppXSVC)",[0m
+[0;32m        "Windows Audio Endpoint Builder",[0m
+[0;32m        "Windows Audio",[0m
+[0;32m        "ActiveX Installer (AxInstSV)",[0m
+[0;32m        "Base Filtering Engine",[0m
+[0;32m        "Background Intelligent Transfer Service",[0m
+[0;32m        "Background Tasks Infrastructure Service",[0m
+[0;32m        "Bluetooth Support Service",[0m
+[0;32m        "Capability Access Manager Service",[0m
+[0;32m        "CaptureService_1c3015e",[0m
+[0;32m        "Clipboard User Service_1c3015e",[0m
+[0;32m        "Connected Devices Platform Service",[0m
+[0;32m        "Connected Devices Platform User Service_1c3015e",[0m
+[0;32m        "Certificate Propagation",[0m
+[0;32m        "Client License Service (ClipSVC)",[0m
+[0;32m        "COM+ System Application",[0m
+[0;32m        "ConsentUX User Service_1c3015e",[0m
+[0;32m        "CoreMessaging",[0m
+[0;32m        "CredentialEnrollmentManagerUserSvc_1c3015e",[0m
+[0;32m        "Cryptographic Services",[0m
+[0;32m        "Offline Files",[0m
+[0;32m        "DCOM Server Process Launcher",[0m
+[0;32m        "dcsvc",[0m
+[0;32m        "Optimize drives",[0m
+[0;32m        "DeviceAssociationBroker_1c3015e",[0m
+[0;32m        "Device Association Service",[0m
+[0;32m        "Device Install Service",[0m
+[0;32m        "DevicePicker_1c3015e",[0m
+[0;32m        "DevicesFlow_1c3015e",[0m
+[0;32m        "DevQuery Background Discovery Broker",[0m
+[0;32m        "DHCP Client",[0m
+[0;32m        "Microsoft (R) Diagnostics Hub Standard Collector Service",[0m
+[0;32m        "Connected User Experiences and Telemetry",[0m
+[0;32m        "Display Policy Service",[0m
+[0;32m        "Device Management Enrollment Service",[0m
+[0;32m        "Device Management Wireless Application Protocol (WAP) Push message Routing Service",[0m
+[0;32m        "DNS Client",[0m
+[0;32m        "Delivery Optimization",[0m
+[0;32m        "Wired AutoConfig",[0m
+[0;32m        "Diagnostic Policy Service",[0m
+[0;32m        "Device Setup Manager",[0m
+[0;32m        "Data Sharing Service",[0m
+[0;32m        "Extensible Authentication Protocol",[0m
+[0;32m        "Microsoft Edge Update Service (edgeupdate)",[0m
+[0;32m        "Microsoft Edge Update Service (edgeupdatem)",[0m
+[0;32m        "Encrypting File System (EFS)",[0m
+[0;32m        "Embedded Mode",[0m
+[0;32m        "Enterprise App Management Service",[0m
+[0;32m        "Windows Event Log",[0m
+[0;32m        "COM+ Event System",[0m
+[0;32m        "Function Discovery Provider Host",[0m
+[0;32m        "Function Discovery Resource Publication",[0m
+[0;32m        "Windows Font Cache Service",[0m
+[0;32m        "Windows Camera Frame Server",[0m
+[0;32m        "Windows Camera Frame Server Monitor",[0m
+[0;32m        "Group Policy Client",[0m
+[0;32m        "GraphicsPerfSvc",[0m
+[0;32m        "Human Interface Device Service",[0m
+[0;32m        "HV Host Service",[0m
+[0;32m        "IKE and AuthIP IPsec Keying Modules",[0m
+[0;32m        "Microsoft Store Install Service",[0m
+[0;32m        "IP Helper",[0m
+[0;32m        "CNG Key Isolation",[0m
+[0;32m        "KDC Proxy Server service (KPS)",[0m
+[0;32m        "KtmRm for Distributed Transaction Coordinator",[0m
+[0;32m        "Server",[0m
+[0;32m        "Workstation",[0m
+[0;32m        "Geolocation Service",[0m
+[0;32m        "Windows License Manager Service",[0m
+[0;32m        "Link-Layer Topology Discovery Mapper",[0m
+[0;32m        "TCP/IP NetBIOS Helper",[0m
+[0;32m        "Local Session Manager",[0m
+[0;32m        "Downloaded Maps Manager",[0m
+[0;32m        "McpManagementService",[0m
+[0;32m        "Microsoft Edge Elevation Service (MicrosoftEdgeElevationService)",[0m
+[0;32m        "Mozilla Maintenance Service",[0m
+[0;32m        "Windows Defender Firewall",[0m
+[0;32m        "Distributed Transaction Coordinator",[0m
+[0;32m        "Microsoft iSCSI Initiator Service",[0m
+[0;32m        "Windows Installer",[0m
+[0;32m        "Network Connectivity Assistant",[0m
+[0;32m        "Network Connection Broker",[0m
+[0;32m        "Netlogon",[0m
+[0;32m        "Network Connections",[0m
+[0;32m        "Network List Service",[0m
+[0;32m        "Network Setup Service",[0m
+[0;32m        "Net.Tcp Port Sharing Service",[0m
+[0;32m        "Microsoft Passport Container",[0m
+[0;32m        "Microsoft Passport",[0m
+[0;32m        "Network Location Awareness",[0m
+[0;32m        "Network Store Interface Service",[0m
+[0;32m        "Program Compatibility Assistant Service",[0m
+[0;32m        "Performance Counter DLL Host",[0m
+[0;32m        "Contact Data_1c3015e",[0m
+[0;32m        "Performance Logs & Alerts",[0m
+[0;32m        "Plug and Play",[0m
+[0;32m        "IPsec Policy Agent",[0m
+[0;32m        "Power",[0m
+[0;32m        "Printer Extensions and Notifications",[0m
+[0;32m        "PrintWorkflow_1c3015e",[0m
+[0;32m        "User Profile Service",[0m
+[0;32m        "Windows PushToInstall Service",[0m
+[0;32m        "Quality Windows Audio Video Experience",[0m
+[0;32m        "Remote Access Auto Connection Manager",[0m
+[0;32m        "Remote Access Connection Manager",[0m
+[0;32m        "Routing and Remote Access",[0m
+[0;32m        "Remote Registry",[0m
+[0;32m        "Radio Management Service",[0m
+[0;32m        "RPC Endpoint Mapper",[0m
+[0;32m        "Remote Procedure Call (RPC) Locator",[0m
+[0;32m        "Remote Procedure Call (RPC)",[0m
+[0;32m        "Resultant Set of Policy Provider",[0m
+[0;32m        "Special Administration Console Helper",[0m
+[0;32m        "Security Accounts Manager",[0m
+[0;32m        "Smart Card",[0m
+[0;32m        "Smart Card Device Enumeration Service",[0m
+[0;32m        "Task Scheduler",[0m
+[0;32m        "Smart Card Removal Policy",[0m
+[0;32m        "Secondary Logon",[0m
+[0;32m        "Windows Security Service",[0m
+[0;32m        "Payments and NFC/SE Manager",[0m
+[0;32m        "System Event Notification Service",[0m
+[0;32m        "Windows Defender Advanced Threat Protection Service",[0m
+[0;32m        "Sensor Data Service",[0m
+[0;32m        "Sensor Service",[0m
+[0;32m        "Sensor Monitoring Service",[0m
+[0;32m        "Remote Desktop Configuration",[0m
+[0;32m        "System Guard Runtime Monitor Broker",[0m
+[0;32m        "Internet Connection Sharing (ICS)",[0m
+[0;32m        "Shell Hardware Detection",[0m
+[0;32m        "Shared PC Account Manager",[0m
+[0;32m        "Microsoft Storage Spaces SMP",[0m
+[0;32m        "SNMP Trap",[0m
+[0;32m        "Print Spooler",[0m
+[0;32m        "Software Protection",[0m
+[0;32m        "SSDP Discovery",[0m
+[0;32m        "OpenSSH Authentication Agent",[0m
+[0;32m        "OpenSSH SSH Server",[0m
+[0;32m        "Secure Socket Tunneling Protocol Service",[0m
+[0;32m        "State Repository Service",[0m
+[0;32m        "Windows Image Acquisition (WIA)",[0m
+[0;32m        "Storage Service",[0m
+[0;32m        "Spot Verifier",[0m
+[0;32m        "Microsoft Software Shadow Copy Provider",[0m
+[0;32m        "SysMain",[0m
+[0;32m        "System Events Broker",[0m
+[0;32m        "Touch Keyboard and Handwriting Panel Service",[0m
+[0;32m        "Telephony",[0m
+[0;32m        "Remote Desktop Services",[0m
+[0;32m        "Themes",[0m
+[0;32m        "Storage Tiers Management",[0m
+[0;32m        "Time Broker",[0m
+[0;32m        "Web Account Manager",[0m
+[0;32m        "Distributed Link Tracking Client",[0m
+[0;32m        "Windows Modules Installer",[0m
+[0;32m        "TightVNC Server",[0m
+[0;32m        "Auto Time Zone Updater",[0m
+[0;32m        "User Access Logging Service",[0m
+[0;32m        "Udk User Service_1c3015e",[0m
+[0;32m        "User Experience Virtualization Service",[0m
+[0;32m        "Remote Desktop Services UserMode Port Redirector",[0m
+[0;32m        "User Data Storage_1c3015e",[0m
+[0;32m        "UPnP Device Host",[0m
+[0;32m        "User Data Access_1c3015e",[0m
+[0;32m        "User Manager",[0m
+[0;32m        "Update Orchestrator Service",[0m
+[0;32m        "Credential Manager",[0m
+[0;32m        "Virtual Disk",[0m
+[0;32m        "Hyper-V Guest Service Interface",[0m
+[0;32m        "Hyper-V Heartbeat Service",[0m
+[0;32m        "Hyper-V Data Exchange Service",[0m
+[0;32m        "Hyper-V Guest Shutdown Service",[0m
+[0;32m        "Hyper-V Time Synchronization Service",[0m
+[0;32m        "Hyper-V PowerShell Direct Service",[0m
+[0;32m        "Hyper-V Volume Shadow Copy Requestor",[0m
+[0;32m        "Volume Shadow Copy",[0m
+[0;32m        "Windows Time",[0m
+[0;32m        "Windows Update Medic Service",[0m
+[0;32m        "WalletService",[0m
+[0;32m        "Warp JIT Service",[0m
+[0;32m        "Windows Biometric Service",[0m
+[0;32m        "Windows Connection Manager",[0m
+[0;32m        "Diagnostic Service Host",[0m
+[0;32m        "Diagnostic System Host",[0m
+[0;32m        "Windows Event Collector",[0m
+[0;32m        "Windows Encryption Provider Host Service",[0m
+[0;32m        "Problem Reports Control Panel Support",[0m
+[0;32m        "Windows Error Reporting Service",[0m
+[0;32m        "Still Image Acquisition Events",[0m
+[0;32m        "WinHTTP Web Proxy Auto-Discovery Service",[0m
+[0;32m        "Windows Management Instrumentation",[0m
+[0;32m        "Windows Remote Management (WS-Management)",[0m
+[0;32m        "Windows Insider Service",[0m
+[0;32m        "Microsoft Account Sign-in Assistant",[0m
+[0;32m        "Windows Licensing Monitoring Service",[0m
+[0;32m        "WMI Performance Adapter",[0m
+[0;32m        "Windows Media Player Network Sharing Service",[0m
+[0;32m        "Portable Device Enumerator Service",[0m
+[0;32m        "Windows Push Notifications System Service",[0m
+[0;32m        "Windows Push Notifications User Service_1c3015e",[0m
+[0;32m        "Windows Search",[0m
+[0;32m        "Windows Update"[0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [Copy all running services into a file on the controller] *****************
+[0;32mok: [server2022 -> localhost][0m
+
+TASK [Copy all running services into a file on the controller] *****************
+[0;32mok: [server2022 -> localhost][0m
+
+PLAY RECAP *********************************************************************
+[0;32mserver2022[0m                 : [0;32mok=4   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "698c1fc8-40dc-4707-b545-af5cc2d9c5ae", "counter": 1, "stdout": "\u001b[0;31mERROR! the playbook: azure-resource-group-playbook.yml could not be found\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "3d14a235-5ff1-486d-b2fe-eed095dbe1f5", "created": "2023-11-17T19:01:57.638452"}

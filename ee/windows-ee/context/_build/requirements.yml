@@ -1,0 +1,3 @@
+collections:
+  - ansible.windows
+  #- git+https://github.com/ansible-collections/ansible.windows  # this is the latest windows collection

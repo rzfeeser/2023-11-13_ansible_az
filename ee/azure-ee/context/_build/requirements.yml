@@ -1,0 +1,2 @@
+collections:
+- git+https://github.com/ansible-collections/azure

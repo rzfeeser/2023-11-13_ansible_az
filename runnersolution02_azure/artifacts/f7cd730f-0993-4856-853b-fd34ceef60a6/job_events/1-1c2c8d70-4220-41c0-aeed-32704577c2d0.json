@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "1c2c8d70-4220-41c0-aeed-32704577c2d0", "counter": 1, "stdout": "\u001b[1;35m[WARNING]: Collection azure.azcollection does not support Ansible version\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "f7cd730f-0993-4856-853b-fd34ceef60a6", "created": "2023-11-17T19:26:27.694282"}

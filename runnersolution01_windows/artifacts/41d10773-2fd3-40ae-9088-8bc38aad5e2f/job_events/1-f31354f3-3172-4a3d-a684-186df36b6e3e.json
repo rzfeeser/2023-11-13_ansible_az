@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "f31354f3-3172-4a3d-a684-186df36b6e3e", "counter": 1, "stdout": "\u001b[1;35m[WARNING]: Collection ansible.windows does not support Ansible version 2.11.12\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "41d10773-2fd3-40ae-9088-8bc38aad5e2f", "created": "2023-11-17T19:03:25.125204"}

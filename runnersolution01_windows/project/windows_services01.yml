@@ -1,0 +1,27 @@
+---
+- name: Looping across Windows Services
+  hosts: windows
+  #connection: winrm   # we already mapped this in our inventory
+  gather_facts: false
+
+  tasks:
+  
+    - name: Grab a list of windows services
+      ansible.windows.win_service_info:
+      register: results
+    
+    - name: What results did we get?
+      ansible.builtin.debug:
+              var: results.get('services') | map(attribute="display_name")
+
+    - name: Copy all running services into a file on the controller
+      ansible.builtin.copy:
+              content: "{{ results.get('services') | map(attribute='display_name') | join('\n')}}"
+              dest: "{{ inventory_hostname }}-services_running.txt"
+      delegate_to: localhost
+
+    - name: Copy all running services into a file on the controller
+      ansible.builtin.copy:
+              content: "{{ results.get('services') | map(attribute='display_name') }}"
+              dest: "{{ inventory_hostname }}-services_running.json"
+      delegate_to: localhost

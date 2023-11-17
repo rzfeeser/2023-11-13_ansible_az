@@ -1,0 +1,45 @@
+---
+version: 3
+
+  #build_arg_defaults:
+  #  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: '--pre'
+  #  ANSIBLE_GALAXY_CLI_ROLE_OPTS: 'SAMPLE=simple'
+  
+
+dependencies:
+  ansible_core:
+    package_pip: ansible-core==2.11.12   # you can get the latest ansible as long as you have ANSIBLE_GALAXY_CLI_COLLECTION_OPTS set to --pre for prerelease approvals
+  ansible_runner:
+    package_pip: ansible-runner
+  galaxy: requirements.yml
+  #  - azure.azcollection  # provide a list of collections or point to a file, such as requirements.yml
+  python: requirements.txt
+  #system: bindep.txt
+
+images:
+  base_image:
+    name: docker.io/redhat/ubi9:latest     #docker.io/ubuntu:latest   #egistry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest
+
+#additional_build_files:
+#    - src: files/ansible.cfg
+#      dest: configs
+#
+additional_build_steps:
+  prepend_base:
+    - RUN dnf update -y
+    - RUN dnf install python3-pip git -y
+    - RUN python3 -m pip install --upgrade pip
+    - RUN python3 -m pip install setuptools_rust
+    - RUN python3 -m pip install setuptools
+    - RUN python3 -m pip freeze
+    #- RUN python3 -m ensurepip --upgrade
+
+  #  prepend_galaxy:
+  #    - ADD _build/configs/ansible.cfg ~/.ansible.cfg
+
+  #  prepend_final: |
+  #    RUN whoami
+  #    RUN cat /etc/os-release
+  append_final:
+    - RUN ansible --version
+    - RUN pip freeze

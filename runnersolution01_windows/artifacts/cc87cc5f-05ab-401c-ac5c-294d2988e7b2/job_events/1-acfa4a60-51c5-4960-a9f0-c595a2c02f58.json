@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "acfa4a60-51c5-4960-a9f0-c595a2c02f58", "counter": 1, "stdout": "\u001b[1;35m[WARNING]: Skipping unexpected key (windows) in group (all), only \"vars\",\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "cc87cc5f-05ab-401c-ac5c-294d2988e7b2", "created": "2023-11-17T17:27:16.122097"}
